@@ -4,14 +4,14 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.UUID;
 
-public class UserProfile {
+public class UserDTO {
 
     private UUID userProfileId;
     private String username;
     // S3 key
     private String userProfileImageLink;
 
-    public UserProfile(UUID userProfileId, String username, String userProfileImageLink) {
+    public UserDTO(UUID userProfileId, String username, String userProfileImageLink) {
         this.userProfileId = userProfileId;
         this.username = username;
         this.userProfileImageLink = userProfileImageLink;
@@ -45,7 +45,7 @@ public class UserProfile {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UserProfile that = (UserProfile) o;
+        UserDTO that = (UserDTO) o;
 
         return Objects.equals(userProfileId, that.userProfileId) &&
                Objects.equals(username, that.username) &&

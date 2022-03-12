@@ -1,5 +1,6 @@
 package com.amigoscode.awsimageupload.profile;
 
+import com.amigoscode.awsimageupload.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -13,15 +14,15 @@ import java.util.UUID;
 @CrossOrigin("*")
 public class UserProfileController {
 
-    private final UserProfileService userProfileService;
+    private final UserService userProfileService;
 
     @Autowired
-    public UserProfileController(UserProfileService userProfileService) {
+    public UserProfileController(UserService userProfileService) {
         this.userProfileService = userProfileService;
     }
 
     @GetMapping
-    public List<UserProfile> getUserProfiles() {
+    public List<UserDTO> getUserProfiles() {
         return userProfileService.getUserProfiles();
     }
 
